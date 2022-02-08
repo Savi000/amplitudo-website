@@ -1,0 +1,205 @@
+// software development page
+@import "./variables";
+@import "./mixins";
+
+.software-development {
+  .first-section {
+    max-width: 50%;
+    margin: auto;
+    text-align: justify;
+    // margin-top: 15vh; bilo
+    margin-top: 20vh;
+
+    img {
+      width: 100%;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      // @include nav-styles(column, center, center);
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // justify-content: center;
+      max-width: 70%;
+    }
+    @media (max-height: "700px") and (max-width: $breakpoint-tablet) {
+      margin-top: 25vh;
+      max-width: 90%;
+    }
+    h1 {
+      font-size: 75px;
+      text-align: center;
+      font-family: initial;
+      line-height: 55px;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 55px;
+      }
+      @media (max-width: $breakpoint-phone) {
+        font-size: 35px;
+        line-height: 25px;
+      }
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  // software development products
+
+  .productsTitle {
+    font-size: 75px;
+    // font-size: 200px;
+    line-height: 0px;
+    text-align: center;
+    margin-top: 15%;
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 30%;
+      font-size: 65px;
+    }
+    @media (max-width: $breakpoint-phone) {
+      font-size: 50px;
+    }
+    p {
+      font-size: 50px;
+      font-family: "Comforter", cursive;
+      color: #17ac9d;
+      font-style: italic;
+      margin-top: 30px;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 40px;
+        margin-top: 20px;
+      }
+    }
+  }
+  .background-div {
+    // height: 50%;
+    height: 450px;
+    margin: auto;
+    background: #f5f5f5;
+    position: relative;
+    max-width: 55%;
+    // ovo ne overflovuje
+    // bilo  height 50
+
+    @media (min-width: 1441px) {
+      max-width: 40%;
+    }
+    @media (max-width: 1100px) {
+      max-width: 75%;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 500px;
+    }
+    @media (max-height: "1366px") and (max-width: $breakpoint-tablet) {
+      // margin-bottom: 60%;
+      margin-bottom: 250px;
+    }
+    @media (max-width: $breakpoint-phone) {
+      height: 250px;
+    }
+    .products {
+      // display: flex;
+      // ovo ne overflovuje
+      // bilo flex
+      // ne treba display flex jer su oba elementa iz products position absolute u ondosu na background div jer
+      // position relative
+      // align-items: center;
+      // justify-content: space-around;
+      // margin-top: 20%;
+      margin-top: 15%;
+
+      // @media (max-width: $breakpoint-tablet) {
+      //   margin-top: 70%;
+      // }
+
+      &__image {
+        position: absolute;
+        top: 10%;
+        right: -15%;
+        @media (max-width: $breakpoint-tablet) {
+          // position: relative;
+          right: 0;
+          left: 15%;
+
+          // @media (max-height: $breakpoint-tablet) {
+          // left: 15%;
+          // top: -20px;
+          // }
+        }
+        @media (max-width: $breakpoint-phone) {
+          right: 9%;
+          left: 13%;
+        }
+        img {
+          width: 500px;
+          height: 300px;
+          @media (max-width: $breakpoint-tablet) {
+            // margin: auto;
+            max-width: 80%;
+            height: 10%;
+          }
+          @media (max-width: $breakpoint-phone) {
+            max-width: 100%;
+          }
+        }
+      }
+      // margin top za products probaj u pixele da bude fixed val
+      &__text {
+        // display: flex;
+        position: absolute;
+        top: 10%;
+        left: -13%;
+        // left -13 bilo
+        // no margin
+        font-size: 25px;
+        max-width: 40%;
+
+        // @media (min-width: 1441px) {
+        //   max-width: 40%;
+        // }
+
+        @media (max-width: $breakpoint-tablet) {
+          top: 70%;
+          left: 13%;
+          max-width: 70%;
+        }
+        @media (max-width: $breakpoint-phone) {
+          // top: 55%;
+          top: 220px;
+          left: 10%;
+          max-width: 90%;
+        }
+        @media (max-width: "373px") {
+          top: 176px;
+        }
+        // @media (max-height: "500px") {
+        //   top: 70%;
+        // } za iphone 4 npr, moze ali nzm da li to vazi za svaki tel
+
+        h1 {
+          font-size: 50px;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 70%;
+            right: 89%;
+            border-bottom: 5px solid #17ac9d;
+            width: 2rem;
+          }
+          @media (max-width: $breakpoint-phone) {
+            font-size: 40px;
+          }
+        }
+        p {
+          @media (max-width: $breakpoint-phone) {
+            font-size: 22px;
+          }
+        }
+      }
+      // btn-div se nalazi u text div-u
+      &__btn-div {
+        @include btn-styles();
+      }
+    }
+  }
+}

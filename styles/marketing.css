@@ -1,0 +1,323 @@
+@media (max-width: 768px) {
+  .dropdown-under-link-active {
+    -webkit-transition: 0.2s !important;
+    transition: 0.2s !important;
+    margin-top: 100px !important;
+  }
+}
+
+.dropdown-services.active-nav-dropdown {
+  width: 250px !important;
+  left: -100% !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  .dropdown-services.active-nav-dropdown {
+    width: 50% !important;
+    left: 24% !important;
+    height: 100px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-services.active-nav-dropdown {
+    width: 100% !important;
+    left: 0% !important;
+    height: 100px !important;
+  }
+}
+
+.dropdown-services.active-nav-dropdown a {
+  -webkit-animation: dropdownLinks 0.1s forwards;
+          animation: dropdownLinks 0.1s forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.icon-div {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .icon-div {
+    margin-left: 0;
+    height: 100%;
+    background: gray;
+    width: 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.active-dropdown-icon {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 80px;
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    margin-top: 20px;
+    margin-left: -50px;
+    margin-bottom: 150px;
+  }
+}
+
+.dropdown button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #17ac9d;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dropdown button:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: #17ac9d;
+  color: white;
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown .show {
+  display: block;
+}
+
+@-webkit-keyframes dropdownLinks {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+
+@keyframes dropdownLinks {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+
+.fa-arrow-left,
+.fa-arrow-right {
+  color: gray;
+  font-size: 60px;
+}
+
+@media (max-width: 768px) {
+  .fa-arrow-left,
+  .fa-arrow-right {
+    font-size: 30px;
+  }
+}
+
+.image-text {
+  text-align: justify;
+  width: 70%;
+  margin: auto;
+  padding: 20px 20px;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .image-text {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-text {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 85%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-bottom: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 100%;
+    margin: none;
+  }
+}
+
+.wrapper button {
+  cursor: pointer;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: none;
+  background: none;
+  z-index: 10;
+}
+
+.wrapper button i {
+  color: lightgray;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.wrapper button i:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: gray;
+}
+
+.slider-container {
+  padding: 10px;
+  max-width: 60%;
+  overflow-x: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.slider-container::before, .slider-container::after {
+  height: 95%;
+  width: 15%;
+  content: "";
+  position: absolute;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .slider-container::before, .slider-container::after {
+    width: 10%;
+  }
+}
+
+.slider-container::before {
+  background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  left: 0;
+  top: 0;
+}
+
+.slider-container::after {
+  background: -webkit-gradient(linear, right top, left top, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
+  right: 0;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-container {
+    max-width: 100%;
+    left: -5%;
+  }
+}
+
+.slider-list {
+  position: relative;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.slider-item {
+  cursor: pointer;
+  min-height: 20%;
+  min-width: 25%;
+  padding-right: 10%;
+  margin-bottom: -4px;
+}
+
+@media (max-width: 768px) {
+  .slider-item {
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item {
+    min-width: 45%;
+  }
+}
+
+.tranzisn {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.slider-item img:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.active-item {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-filter: grayscale(0%) !important;
+          filter: grayscale(0%) !important;
+}
+/*# sourceMappingURL=marketing.css.map */

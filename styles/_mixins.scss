@@ -1,0 +1,436 @@
+@import "./variables";
+@mixin flex($direction, $alignItems: null, $justifyContent: null) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  flex-direction: $direction;
+}
+
+@mixin nav-styles {
+  top: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+  // responsive nav btn
+  .active {
+    &::after {
+      width: 70%;
+      height: 2.5px;
+      left: 16%;
+      top: 90%;
+      // top: 90%;
+      @media (max-width: $breakpoint-tablet) {
+        width: 0;
+      }
+    }
+    font-weight: bold;
+    @media (max-width: $breakpoint-tablet) {
+      background: lightgray;
+    }
+  }
+
+  &__image {
+    @media (max-width: $breakpoint-tablet) {
+      position: fixed;
+      right: 50px;
+      top: 45px;
+    }
+  }
+  .hamburger {
+    display: none;
+    @media (max-width: $breakpoint-tablet) {
+      display: block;
+      position: fixed;
+      left: 50px;
+      top: 40px;
+      z-index: 999;
+    }
+  }
+  .hamburger .line {
+    width: 40px;
+    height: 4px;
+    background-color: black;
+    display: block;
+    margin: 8px auto;
+    transition: 0.4s;
+  }
+  #hamburger-1.is-active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburger-1.is-active .line:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+
+  #hamburger-1.is-active .line:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+  .active-list {
+    @media (max-width: $breakpoint-tablet) {
+      transition: 0.3s;
+      left: 0;
+    }
+    @media (max-width: $breakpoint-phone) {
+      top: 94%;
+    }
+  }
+
+  &__links {
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      @media (max-width: $breakpoint-tablet) {
+        padding-top: 10%;
+        flex-direction: column;
+      }
+    }
+    @media (max-width: $breakpoint-tablet) {
+      // nav ima top:0 zato sad odvajamo listu od navigacije
+      height: 100vh;
+      position: absolute;
+      top: 75%;
+      left: -100%;
+      width: 100%;
+      // bilo whit
+      background: white;
+      transition: 0.3s;
+      overflow-y: scroll;
+    }
+
+    ul li {
+      margin-left: 42px;
+      margin-top: 10px;
+      // paddding-bottom 10px margin da izravna
+      // 776px responsive pocinje logo malo da se gubi
+      position: relative;
+
+      a {
+        @include flex(null, center, center);
+        width: 100%;
+        height: 100%;
+        &:after {
+          background: none repeat scroll 0 0 transparent;
+          bottom: 0;
+          content: "";
+          display: block;
+          height: 2.5px;
+          left: 50%;
+          top: 90%;
+          position: absolute;
+          background: #17ac9d;
+          transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          width: 0;
+        }
+        &:hover:after {
+          width: 70%;
+          left: 16%;
+          @media (max-width: $breakpoint-tablet) {
+            width: 0;
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+        @include flex(null, center, center);
+        margin-left: -45px;
+        // zato sto ul ne pocinje od pocetka
+        height: 70px;
+      }
+
+      a {
+        padding-bottom: 10px;
+        text-decoration: none;
+        color: inherit;
+        @media (max-width: $breakpoint-tablet) {
+          padding-bottom: 0;
+        }
+      }
+    }
+    li:last-child {
+      margin-right: 50px;
+    }
+  }
+
+  .services-nav-link {
+    position: relative;
+    padding-left: 10%;
+    &:hover + .dropdown-services {
+      transition: 0.3s;
+      width: 250px;
+      left: -160%;
+      visibility: visible;
+      a {
+        animation: dropdownLinks 0.3s forwards;
+        animation-delay: 0.2s;
+      }
+    }
+  }
+  // navigacija dropdown za linkove
+
+  .dropdown-services {
+    width: 0;
+    background: #17ac9d;
+    z-index: 1;
+    position: absolute;
+    visibility: hidden;
+    left: 50%;
+    // da se zavrsi na centar
+    top: 95%;
+    transition: 0.3s;
+    @media (max-width: $breakpoint-tablet) {
+      width: 50%;
+      height: 0;
+      left: 24%;
+      background: lightgray;
+    }
+    &:hover {
+      @media (min-width: $breakpoint-tablet) {
+        visibility: visible;
+        transition: 0.3s;
+        opacity: 1;
+        width: 250px;
+        height: fit-content;
+        left: -160%;
+      }
+      a {
+        animation: dropdownLinks 0.3s forwards;
+        animation-delay: 0.2s;
+        &::after {
+          width: 0;
+        }
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // transition: 0.5s;
+    }
+    &__content a {
+      font-weight: bold;
+      padding: 0;
+      opacity: 0;
+      height: 50px;
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        #17ac9d 50%,
+        rgba(0, 0, 0, 0.2) 50%
+      );
+      background-size: 100% 200%;
+      background-position: top;
+      @media (max-width: $breakpoint-tablet) {
+        background: lightgray;
+      }
+      &:hover {
+        transition: 0.1s;
+        background-position: bottom;
+      }
+
+      &::after {
+        // zbog nav li a koji selektuje sve anchor aktivne i daje im after element
+        width: 0;
+      }
+    }
+  }
+}
+.dropdown-under-link-active {
+  @media (max-width: $breakpoint-tablet) {
+    transition: 0.2s !important;
+    margin-top: 100px !important;
+  }
+}
+// touch screen
+.dropdown-services.active-nav-dropdown {
+  width: 250px !important;
+  left: -100% !important;
+  visibility: visible !important;
+  // PROBAJ I ODJE LINK DA STAVIS DA NE MORAM I TU DA DODAJEM KLASE
+  // media screen je prooooooblem
+  @media (max-width: $breakpoint-tablet) {
+    width: 50% !important;
+    left: 24% !important;
+    height: 100px !important;
+  }
+  @media (max-width: $breakpoint-phone) {
+    width: 100% !important;
+    left: 0% !important;
+    height: 100px !important;
+  }
+  a {
+    animation: dropdownLinks 0.1s forwards;
+    animation-delay: 0.2s;
+  }
+}
+.icon-div {
+  margin-left: 10px;
+  @media (max-width: $breakpoint-tablet) {
+    margin-left: 0;
+    height: 100%;
+    background: gray;
+    width: 15%;
+    @include flex(null, center, center);
+  }
+}
+.active-dropdown-icon {
+  transition: 0.5s;
+  transform: rotate(180deg);
+}
+
+// .dropdown-services:hover {
+//   @media (min-width: $breakpoint-tablet) {
+//     transition: 0.3s;
+//     opacity: 1;
+//     width: 250px;
+//     left: -160%;
+//   }
+// .dropdown-services__content {
+// display: flex;
+
+a {
+  // background: linear-gradient(
+  //   to bottom,
+  //   #17ac9d 50%,
+  //   rgba(0, 0, 0, 0.2) 50%
+  // );
+  // background-size: 100% 200%;
+  // background-position: top;
+  // height: 50px;
+  // animation-delay: 0.2s;
+  // animation: dropdownLinks 0.1s forwards;
+  // transition: 0.1s;
+  // &:hover {
+  //   background-position: bottom;
+  // }
+  // &::after {
+  //   // zbog nav li a koji selektuje sve anchor aktivne i daje im after element
+  //   width: 0;
+  // }
+  // }
+  // }
+
+  // a {
+  //   // to left
+  //   background: linear-gradient(to top, #17ac9d 50%, rgba(0, 0, 0, 0.2) 50%);
+  //   background-size: 100% 200%;
+  //   // background-position: right bottom;
+  //   background-position: top;
+  //   animation: dropdownLinks 0.1s forwards;
+  //   animation-delay: 0.2s;
+  //   transition: 0.2s;
+
+  //   &:hover {
+  //     transition: 0.2s;
+  //     // background-position: left bottom;
+  //     background-position: bottom;
+  //   }
+  //   &::after {
+  //     // zbog nav li a koji selektuje sve anchor aktivne i daje im after element
+  //     width: 0;
+  //   }
+
+  // }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 80px;
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 20px;
+    margin-left: -50px;
+    margin-bottom: 150px;
+  }
+  button {
+    height: fit-content;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #17ac9d;
+    transition: 0.3s;
+    &:hover {
+      transition: 0.3s;
+      background: #17ac9d;
+      color: white;
+    }
+  }
+  &__content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .show {
+    display: block;
+  }
+}
+
+@keyframes dropdownLinks {
+  from {
+    // height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    // height: 50px;
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+// }
+
+// button styles
+
+@mixin btn-styles() {
+  display: flex;
+  align-items: center;
+  // z-index: 1;
+  margin-top: 50px;
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 0px;
+  }
+  h2 {
+    margin-left: 20px;
+    @media (max-width: $breakpoint-phone) {
+      font-size: 30px;
+    }
+  }
+  button {
+    height: fit-content;
+    // z-index: 1;
+    background: linear-gradient(to left, #17ac9d 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    border: 1px solid #384f63;
+    // background: #17ac9d;
+    border-radius: 50%;
+    padding: 20px 21px;
+    transition: 0.5s;
+    @media (max-width: $breakpoint-tablet) {
+      padding: 16px 17px;
+    }
+    i {
+      color: white;
+      font-size: 25px;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 20px;
+      }
+    }
+    &:hover {
+      transition: 0.5s;
+      background-position: left bottom;
+
+      i {
+        color: #17ac9d;
+      }
+    }
+  }
+}

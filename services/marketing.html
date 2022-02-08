@@ -1,0 +1,283 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../styles/css/fontawesome.css" rel="stylesheet" />
+    <link href="../styles/css/brands.css" rel="stylesheet" />
+    <link href="../styles/css/solid.css" rel="stylesheet" />
+    <link href="../styles/css/regular.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comforter&family=Dongle:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/softwaredev.css" />
+    <link rel="stylesheet" href="../styles/marketing.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div onclick="toggleClass(event)" class="hamburger" id="hamburger-1">
+        <span style="pointer-events: none" class="line"></span>
+        <span style="pointer-events: none" class="line"></span>
+        <span style="pointer-events: none" class="line"></span>
+      </div>
+      <!-- src=${nav.dataset.page ? "../assets/logoTransparent.svg" : "../assets/logo.png"}  img src-->
+
+      <img
+        class="nav__image"
+        alt="logo"
+        width="30"
+        height="30"
+        src="../assets/logo.png"
+      />
+      <!-- PRAVI NAVIGACIJU OVAKO SA OVIM DIVOM SVUDA KOPIRAJ JER NA UL NECE NESTO STYLE TO POSLE GUGLAJ ALI SA DIVOM RADI I WIDTH I SVE MOZE NORMALNO CSS DA PISES PA SAD PROMJENI ILI PRILAGODI SVE OVOM DIVU -->
+      <!-- kad koristis samo listu bez div-a bude veci width liste i izlazi izvan okvira a div tacno koliko je body kao da lista bude pomjerena udesno i ne krece od pocetka -->
+      <div class="nav__links">
+        <!-- <ul class="nav__list"> -->
+        <ul>
+          <li><a>Home</a></li>
+          <li>
+            <a class="services-nav-link" href="./">Services</a>
+
+            <!-- bilo dropdown-nav -->
+            <div class="dropdown-services">
+              <div class="dropdown-services__content">
+                <a href="./softwaredev.html">Software Development</a>
+                <a href="./marketing.html">Marketing</a>
+              </div>
+            </div>
+          </li>
+          <li><a>StartUp</a></li>
+          <li><a>Career</a></li>
+          <li><a>Company</a></li>
+          <li><a href="../blog/">Blog</a></li>
+          <div class="dropdown">
+            <button class="current-btn" onclick="changeLanguage(event)">
+              cg
+            </button>
+            <div class="dropdown__content">
+              <button onclick="changeLanguage(event)">en</button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div>
+      <div class="software-development">
+        <div class="first-section">
+          <h1>Marketing</h1>
+          <img src="../assets/Marketing.svg" alt="velikaslika" />
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+            officiis ex facilis tenetur? Eligendi beatae illo adipisci
+            consequuntur, fugit officia perferendis
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            quidem corrupti hic rem repellendus omnis, nam alias, necessitatibus
+            quibusdam expedita iste itaque doloribus, minima autem laudantium.
+            Eligendi laborum perferendis quaerat! Lorem ipsum dolor sit amet
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            quidem corrupti hic rem repellendus omnis, nam alias, necessitatibus
+            quibusdam expedita iste itaque doloribus, minima autem laudantium.
+            Eligendi laborum perferendis quaerat! Lorem ipsum dolor sit amet
+            dolor
+          </p>
+          <h2 class="productsTitle">
+            Take a look at
+            <p>our clients</p>
+          </h2>
+        </div>
+        <!-- <div class="caroussel"> -->
+        <div class="wrapper">
+          <button onclick="goBack()" type="button" class="slider-arrow-prev">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+
+          <div class="slider-container">
+            <ul class="slider-list">
+              <!-- parametar index item-a -->
+              <li onclick="changeItem(0)" class="slider-item">
+                <!-- width veci slika losa -->
+                <img
+                  src="../assets/Artboard 3.png"
+                  alt="BMW"
+                  data-header-text="BMW"
+                />
+              </li>
+              <li onclick="changeItem(1)" class="slider-item">
+                <img
+                  src="../assets/Artboard 4.png"
+                  alt="Interpol"
+                  data-header-text="Interpol"
+                />
+              </li>
+              <li onclick="changeItem(2)" class="slider-item">
+                <img
+                  src="../assets/Artboard 5.png"
+                  alt="OSCE"
+                  data-header-text="OSCE"
+                />
+              </li>
+              <li onclick="changeItem(3)" class="slider-item">
+                <img
+                  src="../assets/Artboard 6.png"
+                  alt="Buducnost"
+                  data-header-text="Buducnost"
+                />
+              </li>
+              <li onclick="changeItem(4)" class="slider-item">
+                <img
+                  src="../assets/telekom-logo.png"
+                  alt="Telekom"
+                  data-header-text="Telekom"
+                />
+              </li>
+            </ul>
+          </div>
+          <button onclick="goNext()" type="button" class="slider-arrow-next">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="image-text">
+          <h2></h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            quod odio et similique beatae deserunt nesciunt odit voluptatem?
+            Officiis, voluptate adipisci quo vel doloribus ab modi repellat
+            architecto nisi unde? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Amet voluptatibus doloribus dignissimos vel quos
+            praesentium, accusamus excepturi perspiciatis cumque consequatur
+            repellendus est laboriosam ratione, necessitatibus porro eos?
+            Soluta, dolorum amet. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Labore quasi officiis inventore deserunt rerum
+            ipsa aut quo ipsum nulla hic maiores cupiditate at error, numquam ut
+            eveniet et? Ratione, dolorum. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Saepe, perspiciatis accusamus similique laborum
+            impedit natus ab, id voluptas odit ipsum veritatis dolorem
+            voluptatum! Corporis tenetur quae, explicabo sed mollitia est. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Maxime sequi
+            dolorem aperiam dolorum enim. Porro similique ratione pariatur nihil
+            quis, non sunt saepe sed fugiat iure sit adipisci rem alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate
+            officiis ipsa a ratione distinctio quidem perferendis, et, itaque
+            non maxime, nobis enim optio? Molestias consequuntur, nam voluptate
+            iusto ipsam totam? Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Ipsa dolore praesentium laboriosam ad saepe
+            corporis nesciunt esse blanditiis qui alias, id, maxime dicta nobis
+            sunt. Expedita cum optio illo nemo.
+          </p>
+        </div>
+
+        <div class="contact-question">
+          <div class="contact-question__text">
+            <p class="contact-question__first-p">Like what you see?</p>
+            <p class="contact-question__second-p">Let's talk about it</p>
+            <a href="../contact/"><button>contact us</button></a>
+          </div>
+          <div>
+            <img src="../assets/parrot.png" alt="parrot" />
+          </div>
+        </div>
+        <h2 class="header">You might be interested</h2>
+        <!-- data-image="softwaredev.svg" u a kao parametar za html.js  -->
+        <!-- data-title="Software development" -->
+        <a class="service-link" href="softwaredev.html"
+          ><div class="service">
+            <div class="service__text">
+              <h1>Software development</h1>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel
+                minus ipsum cum molestiae dolores modi quos libero!
+              </p>
+            </div>
+            <div class="service__img">
+              <img src="../assets/softwaredev.svg" alt="marketing" />
+            </div></div
+        ></a>
+        <!-- software,development  . je razmak a software development naslov i link image  -->
+        <!-- data-image="softwaredev.svg" -->
+        <!-- data-title="Software development" -->
+        <a class="service-link" href="softwaredev.html"
+          ><div class="service">
+            <div class="service__text">
+              <h1>Software development</h1>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel
+                minus ipsum cum molestiae dolores modi quos libero!
+              </p>
+            </div>
+            <div class="service__img">
+              <img src="../assets/softwaredev.svg" alt="marketing" />
+            </div></div
+        ></a>
+      </div>
+      <img class="bg-lines-top" src="../assets/Group 413.svg" alt="ss" />
+
+      <footer>
+        <div class="img-div">
+          <img src="../assets/Group 391.svg" />
+        </div>
+        <div class="first-section">
+          <p>Interested in our services?</p>
+          <h1>contact us</h1>
+        </div>
+        <div class="rectangle">
+          <div class="rectangle__img-div">
+            <img src="../assets/logoTransparent.svg" alt="logo" />
+          </div>
+          <p>Hello from the center of the world!</p>
+          <img src="../assets/sccpre.cat-angel-png-418236.png" />
+          <div class="pointer"></div>
+        </div>
+        <div class="map-point"></div>
+        <div class="footer-info">
+          <div class="footer-logo">
+            <img src="../assets/Group 386.svg" alt="logo" />
+          </div>
+          <div class="location-footer">
+            <!-- bilo p tag -->
+            <p class="location-footer__paragraph">
+              Boulevard of St. Petar Cetinjski 56
+            </p>
+            <p>Podgorica, Montenegro</p>
+          </div>
+          <div class="footer-contact">
+            <p>
+              <a
+                href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKkHkSmJCpqjRdPsjXqbJsLVKNMPmSnjVxBqhfCzPhwJrZzbVQqlDFwQttGvlntTXVfnbCQ"
+                >info@amplitudo.me</a
+              >
+            </p>
+            <p><a href="tel:+382-20-223-244">+382-20-223-244</a></p>
+          </div>
+        </div>
+        <div class="social">
+          <p>Follow us on social media</p>
+          <a><i class="fab fa-facebook"></i></a>
+          <a><i class="fab fa-instagram"></i></a>
+          <a><i class="fab fa-linkedin"></i></a>
+          <a><i class="fab fa-twitter"></i></a>
+          <a><i class="fab fa-behance-square"></i></a>
+        </div>
+        <p class="copyright-paragraph">
+          <i class="far fa-copyright"></i>All rights reserved 2022 Amplitudo
+          Ltd.
+        </p>
+      </footer>
+      <script src="../html.js"></script>
+      <script src="../app.js"></script>
+    </div>
+  </body>
+</html>

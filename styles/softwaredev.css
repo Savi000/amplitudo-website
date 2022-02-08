@@ -1,0 +1,419 @@
+@media (max-width: 768px) {
+  .dropdown-under-link-active {
+    -webkit-transition: 0.2s !important;
+    transition: 0.2s !important;
+    margin-top: 100px !important;
+  }
+}
+
+.dropdown-services.active-nav-dropdown {
+  width: 250px !important;
+  left: -100% !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  .dropdown-services.active-nav-dropdown {
+    width: 50% !important;
+    left: 24% !important;
+    height: 100px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-services.active-nav-dropdown {
+    width: 100% !important;
+    left: 0% !important;
+    height: 100px !important;
+  }
+}
+
+.dropdown-services.active-nav-dropdown a {
+  -webkit-animation: dropdownLinks 0.1s forwards;
+          animation: dropdownLinks 0.1s forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.icon-div {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .icon-div {
+    margin-left: 0;
+    height: 100%;
+    background: gray;
+    width: 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.active-dropdown-icon {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 80px;
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    margin-top: 20px;
+    margin-left: -50px;
+    margin-bottom: 150px;
+  }
+}
+
+.dropdown button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #17ac9d;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dropdown button:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: #17ac9d;
+  color: white;
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown .show {
+  display: block;
+}
+
+@-webkit-keyframes dropdownLinks {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+
+@keyframes dropdownLinks {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+
+.software-development .first-section {
+  max-width: 50%;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20vh;
+}
+
+.software-development .first-section img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .software-development .first-section {
+    max-width: 70%;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 768px) {
+  .software-development .first-section {
+    margin-top: 25vh;
+    max-width: 90%;
+  }
+}
+
+.software-development .first-section h1 {
+  font-size: 75px;
+  text-align: center;
+  font-family: initial;
+  line-height: 55px;
+}
+
+@media (max-width: 768px) {
+  .software-development .first-section h1 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-development .first-section h1 {
+    font-size: 35px;
+    line-height: 25px;
+  }
+}
+
+.software-development .first-section p {
+  margin-bottom: 30px;
+}
+
+.software-development .productsTitle {
+  font-size: 75px;
+  line-height: 0px;
+  text-align: center;
+  margin-top: 15%;
+}
+
+@media (max-width: 768px) {
+  .software-development .productsTitle {
+    margin-bottom: 30%;
+    font-size: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-development .productsTitle {
+    font-size: 50px;
+  }
+}
+
+.software-development .productsTitle p {
+  font-size: 50px;
+  font-family: "Comforter", cursive;
+  color: #17ac9d;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .software-development .productsTitle p {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+}
+
+.software-development .background-div {
+  height: 450px;
+  margin: auto;
+  background: #f5f5f5;
+  position: relative;
+  max-width: 55%;
+}
+
+@media (min-width: 1441px) {
+  .software-development .background-div {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .software-development .background-div {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .software-development .background-div {
+    max-width: 500px;
+  }
+}
+
+@media (max-height: 1366px) and (max-width: 768px) {
+  .software-development .background-div {
+    margin-bottom: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-development .background-div {
+    height: 250px;
+  }
+}
+
+.software-development .background-div .products {
+  margin-top: 15%;
+}
+
+.software-development .background-div .products__image {
+  position: absolute;
+  top: 10%;
+  right: -15%;
+}
+
+@media (max-width: 768px) {
+  .software-development .background-div .products__image {
+    right: 0;
+    left: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-development .background-div .products__image {
+    right: 9%;
+    left: 13%;
+  }
+}
+
+.software-development .background-div .products__image img {
+  width: 500px;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .software-development .background-div .products__image img {
+    max-width: 80%;
+    height: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-development .background-div .products__image img {
+    max-width: 100%;
+  }
+}
+
+.software-development .background-div .products__text {
+  position: absolute;
+  top: 10%;
+  left: -13%;
+  font-size: 25px;
+  max-width: 40%;
+}
+
+@media (max-width: 768px) {
+  .software-development .background-div .products__text {
+    top: 70%;
+    left: 13%;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-development .background-div .products__text {
+    top: 220px;
+    left: 10%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 373px) {
+  .software-development .background-div .products__text {
+    top: 176px;
+  }
+}
+
+.software-development .background-div .products__text h1 {
+  font-size: 50px;
+}
+
+.software-development .background-div .products__text h1::before {
+  content: "";
+  position: absolute;
+  bottom: 70%;
+  right: 89%;
+  border-bottom: 5px solid #17ac9d;
+  width: 2rem;
+}
+
+@media (max-width: 480px) {
+  .software-development .background-div .products__text h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-development .background-div .products__text p {
+    font-size: 22px;
+  }
+}
+
+.software-development .background-div .products__btn-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .software-development .background-div .products__btn-div {
+    margin-top: 0px;
+  }
+}
+
+.software-development .background-div .products__btn-div h2 {
+  margin-left: 20px;
+}
+
+@media (max-width: 480px) {
+  .software-development .background-div .products__btn-div h2 {
+    font-size: 30px;
+  }
+}
+
+.software-development .background-div .products__btn-div button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #17ac9d), color-stop(50%, white));
+  background: linear-gradient(to left, #17ac9d 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  border: 1px solid #384f63;
+  border-radius: 50%;
+  padding: 20px 21px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .software-development .background-div .products__btn-div button {
+    padding: 16px 17px;
+  }
+}
+
+.software-development .background-div .products__btn-div button i {
+  color: white;
+  font-size: 25px;
+}
+
+@media (max-width: 768px) {
+  .software-development .background-div .products__btn-div button i {
+    font-size: 20px;
+  }
+}
+
+.software-development .background-div .products__btn-div button:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-position: left bottom;
+}
+
+.software-development .background-div .products__btn-div button:hover i {
+  color: #17ac9d;
+}
+/*# sourceMappingURL=softwaredev.css.map */

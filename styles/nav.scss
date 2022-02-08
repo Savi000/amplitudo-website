@@ -1,0 +1,62 @@
+@import "./variables";
+@import "./mixins";
+.nav {
+  position: fixed;
+  background: white;
+  @include nav-styles();
+}
+
+.contact-nav {
+  width: 97% !important;
+  position: fixed;
+  height: 120px;
+  background: #17ac9d;
+  color: white;
+  @include nav-styles();
+  @media (max-width: "1200px") {
+    width: 100% !important;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    color: black;
+  }
+  &__links {
+    background: #17ac9d;
+    color: white;
+    ul li {
+      &::after {
+        background: black;
+      }
+    }
+  }
+
+  .dropdown-services {
+    background: white;
+
+    &__content a {
+      color: black;
+      background: linear-gradient(to bottom, white 50%, rgba(0, 0, 0, 0.2) 50%);
+      background-size: 100% 200%;
+    }
+  }
+  .icon-div {
+    @media (max-width: $breakpoint-tablet) {
+      background: whitesmoke;
+      color: black;
+    }
+  }
+
+  .dropdown {
+    button {
+      border: 1px solid black;
+      color: white;
+      background: #17ac9d;
+      &:hover {
+        background: white;
+        color: black;
+      }
+    }
+  }
+  .hamburger .line {
+    background-color: white;
+  }
+}

@@ -1,0 +1,635 @@
+@import "./variables";
+@import "./mixins";
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Dongle", sans-serif;
+  font-size: 25px;
+  line-height: 25px;
+  // min-width: fit-content;aaaaaa ZBOG OVOGA NIJE MOGLO OVERFLOW-HIDDFEN JER JE BODY MORAO STALNO DA POKRIVA SIRINU SVIH ITEM-A IAKO ONI IZLAZE IZVAN OKVIRA
+  overflow-x: hidden;
+  // @media (min-width: 1440px) {
+  // font-size: 30px;
+  // }
+}
+
+// services
+
+.heading {
+  max-width: 50%;
+  margin: auto;
+  margin-top: 20vh;
+  margin-bottom: 10%;
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 90%;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 70px;
+    font-family: initial;
+    line-height: 50px;
+    @media (max-width: $breakpoint-phone) {
+      line-height: 40px;
+      font-size: 40px;
+    }
+  }
+  p {
+    text-align: justify;
+    text-align-last: center;
+    margin: auto;
+    font-size: 25px;
+    @media (max-width: $breakpoint-phone) {
+      font-size: 22px;
+    }
+  }
+}
+// background-line images od svih
+.bg-lines {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  z-index: -1;
+
+  @media (max-width: "1150px") {
+    display: none;
+  }
+}
+.bg-lines-top {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  z-index: -1;
+
+  @media (max-width: "1150px") {
+    display: none;
+  }
+}
+.bg-lines-top-second {
+  position: absolute;
+  top: 40%;
+  left: -20%;
+  z-index: -1;
+  @media (max-width: "1150px") {
+    display: none;
+  }
+}
+
+.cube {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  z-index: -1;
+  @media (max-width: "1150px") {
+    display: none;
+  }
+}
+.circle {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  z-index: -1;
+  @media (max-width: "1150px") {
+    display: none;
+  }
+}
+.letter {
+  position: absolute;
+  top: 10%;
+  right: 0%;
+  z-index: -1;
+  @media (max-width: "1150px") {
+    display: none;
+  }
+}
+// contact page images ionako su sve odje
+
+// one div services
+
+// odje je vjerovatno nesto posto ovo overflowuje sad cemo vdijeti odje i jes problem ali nzm sta moze biti
+
+.service-link {
+  display: block;
+  // background: #f5f5f5;
+  background: white;
+  box-shadow: 0 0 27px 8px rgba(0, 0, 0, 0.2);
+  width: 700px;
+  // odlicno do breakpoint tablet tada svakako flex-direction column
+  height: 220px;
+  margin: auto;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 8vh;
+  padding: 10px 3%;
+  border-radius: 15px;
+  transition: 0.5s;
+
+  &:hover {
+    transition: 0.5s;
+    transform: scale(1.05);
+  }
+  @media (max-width: $breakpoint-tablet) {
+    height: fit-content;
+    padding: 5px 20px;
+    width: 80%;
+  }
+  @media (max-width: $breakpoint-phone) {
+    width: fit-content;
+  }
+  .service {
+    height: 100%;
+    // full height od services link
+    display: flex;
+    align-items: center;
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+    &__text {
+      max-width: 45%;
+      // @media (min-width: 1440px) {
+      //   h1 {
+      //     line-height: 28px;
+      //   }
+      // }
+      @media (max-width: $breakpoint-tablet) {
+        text-align: center;
+        max-width: 95%;
+      }
+      @media (max-width: $breakpoint-phone) {
+        max-width: 100%;
+        line-height: 20px;
+        h1 {
+          font-size: 30px;
+        }
+      }
+      p {
+        @media (max-width: $breakpoint-tablet) {
+          text-align-last: center;
+        }
+        @media (max-width: $breakpoint-phone) {
+          font-size: 22px;
+        }
+      }
+    }
+    &__img {
+      max-width: 55%;
+      @media (max-width: $breakpoint-tablet) {
+        max-width: 90%;
+        padding-bottom: 30px;
+      }
+      @media (max-width: $breakpoint-phone) {
+        max-width: 100%;
+      }
+      // img div i img
+      img {
+        width: 100%;
+        // @media (max-width: $breakpoint-tablet) {
+        // width: 100%;
+        // }
+        // @media (max-width: $breakpoint-phone) {
+        //   width: 100%;
+        // }
+      }
+    }
+  }
+}
+
+// BLOG
+// header marketing i blog naslov ista klasa
+.header,
+.header-blog {
+  font-size: 55px;
+  margin-top: 20vh;
+  text-align: center;
+  font-family: initial;
+  // line-height: 75px;
+  margin-bottom: 23vh;
+  line-height: 70%;
+
+  @media (max-width: $breakpoint-phone) {
+    font-size: 30px;
+    // line-height: 45px;
+    margin-top: 39%;
+  }
+}
+.header {
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 10%;
+  }
+}
+
+.header-blog {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.blog {
+  // text-align: center;
+  margin-bottom: 12%;
+  opacity: 0;
+  // margin-top: 10%;
+  // margin-top: 110px;
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 150px;
+  }
+  h1 {
+    font-size: 90px;
+  }
+  &__img {
+    // background-position: center;
+    background-image: url("../assets/design.png");
+    background-size: cover;
+    position: relative;
+    // top: -15%;
+    // height: 40%;
+    height: 300px;
+    // max-width: 55%;
+    // max-width: 65%;
+    width: 870px;
+    margin: auto;
+    // d-flex
+    @media (max-width: 1100px) {
+      max-width: 100%;
+    }
+    // @media (max-height: "650px") and(max-width: $breakpoint-tablet) {
+    // height: 70%;
+    // }
+  }
+
+  &__rectangle {
+    display: flex;
+    flex-direction: column;
+    // height: fit-content;
+    height: 100%;
+    max-width: 70%;
+    justify-content: space-around;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    // height: 80%;
+    // height: 170px;
+    // background image zauzima i ovu sjenku sto se ne vidi zato ispadaju elementi iz okvira
+    background: url("../assets/Rectangle\ 10070.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    // cijela slika na media screen
+    opacity: 0.9;
+    // padding: 5% 10%;
+    // padding-top: 25px;
+    // @media (max-width: "1100px") {
+    // padding: 2% 10%;
+    // }
+    @media (max-width: $breakpoint-tablet) {
+      top: 50%;
+      background-size: 100% 100%;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+      // padding: 4% 13%;
+      max-width: 100%;
+      left: 0;
+      // right: 6%;
+    }
+
+    .user {
+      text-align: left;
+      padding-bottom: 5vh;
+      padding-left: 13%;
+      // za bg sto ne zauzima full height nego ima sjenku
+      img {
+        width: 150px;
+        height: 40px;
+      }
+    }
+    .user-text {
+      max-width: 80%;
+      // padding na manji screen pa ovo moze 100% ili makni padding
+      padding-top: 3%;
+      padding-left: 10%;
+      text-align: left;
+      p {
+        margin-top: -15px;
+      }
+      h2 {
+        font-size: 45px;
+        @media (max-width: $breakpoint-phone) {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}
+
+.contact-question {
+  position: relative;
+  height: 190px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  @include flex(null, center, center);
+  background: #283e51;
+  color: white;
+  text-align: center;
+  // height: 250px;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 35%;
+    margin-bottom: 30%;
+    @media (max-height: "650px") {
+      // za height
+      // height: 50%;
+      margin-top: 55%;
+      margin-bottom: 55%;
+    }
+  }
+  &__text {
+    line-height: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+    @media (max-width: $breakpoint-tablet) {
+      margin: 0;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      line-height: 30px;
+    }
+  }
+  &__first-p {
+    font-size: 70px;
+    margin-top: 30px;
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 50px;
+    }
+  }
+  &__second-p {
+    font-size: 30px;
+    margin-top: -30px;
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: -20px;
+    }
+  }
+
+  img {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    // right: 350px;
+    top: -90px;
+    @media (max-width: "1000px") {
+      display: none;
+    }
+  }
+  a {
+    button {
+      padding: 10px 40px;
+      border-radius: 10px;
+      font-size: 35px;
+      color: white;
+      transition: 0.5s;
+      @media (max-width: "1100px") {
+        padding: 5px 20px;
+        font-size: 25px;
+      }
+      &:hover {
+        cursor: pointer;
+        transition: 0.5s;
+        background: white;
+        color: #283e51;
+      }
+    }
+  }
+
+  button {
+    border: 1px solid white;
+    background: transparent;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+footer {
+  position: relative;
+  background: #283e51;
+  @include flex(column, center, space-between);
+  color: white;
+  text-align: center;
+
+  // .bg-image {
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   top: -10%;
+  //   background-image: url("../assets/Group\ 391.svg");
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   background-size: 60% 60%;
+  // }
+  .img-div {
+    height: 550px;
+    // 850 pojavljuje se bijeli prostor na footer-u
+    // bilo 850
+    width: 850px;
+    position: absolute;
+    top: 200px;
+    // bilo 200
+    // ovo je za sve vece
+    // @media (max-width: 1200px) {
+    // height: 550px;
+    /// pazi bijeli prostor dolje kad se slika pomjeri zato sto je
+    // }
+    @media (max-width: $breakpoint-tablet) {
+      top: 220px;
+      width: 700px;
+    }
+    @media (max-width: $breakpoint-phone) {
+      top: 240px;
+      height: 350px;
+      width: 500px;
+    }
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  .first-section {
+    h1 {
+      background-image: url("../assets/Group 420.svg");
+      background-position: 70%;
+      background-repeat: no-repeat;
+      background-size: 200px;
+      @media (max-width: $breakpoint-phone) {
+        font-size: 40px;
+        background-position: 60%;
+        background-size: 150px;
+      }
+    }
+
+    p {
+      font-size: 35px;
+    }
+  }
+  .rectangle {
+    position: relative;
+    margin-top: 70px;
+    background: white;
+    color: black;
+    @include flex(null, center, center);
+    border-radius: 10px;
+    padding: 0 15px;
+    max-width: 70%;
+    line-height: 0;
+    @media (max-width: $breakpoint-phone) {
+      font-size: 20px;
+      line-height: 10px;
+    }
+    &__img-div {
+      background: #17ac9d;
+      border-radius: 50%;
+      padding: 7px 7px;
+      margin-right: 10px;
+      img {
+        height: 15px;
+        width: 15px;
+      }
+    }
+    .pointer {
+      position: absolute;
+      top: 75%;
+      left: 48%;
+      background: white;
+      height: 20px;
+      width: 20px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .map-point {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #17ac9d;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 150px;
+    z-index: 1;
+    animation: pulse 2s infinite;
+    // nije do ovoga
+    &:hover {
+      animation: none;
+    }
+  }
+  .footer-info {
+    position: relative;
+    line-height: 0;
+    max-width: 50%;
+    @media (max-width: $breakpoint-phone) {
+      max-width: 60%;
+    }
+  }
+  .location-footer {
+    opacity: 0;
+    &__paragraph {
+      @media (max-width: $breakpoint-phone) {
+        line-height: 15px;
+      }
+    }
+  }
+  .location-footer::after {
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    display: block;
+    width: 50%;
+    content: "";
+    border-bottom: 1px solid white;
+  }
+  .footer-contact {
+    opacity: 0;
+    margin-top: 40px;
+    a {
+      text-decoration: none;
+      color: white;
+      &:hover {
+        transition: 0.5s;
+        color: lightgray;
+      }
+    }
+  }
+  .social {
+    margin-top: 70px;
+    opacity: 0;
+    // za animaciju
+    margin-bottom: 40px;
+    z-index: 1;
+    // zbog bg image
+    .fab {
+      // font-size: 40px;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: 0.5s;
+      margin-left: 5px;
+
+      &:hover {
+        transition: 0.5s;
+        color: #17ac9d;
+        transform: translateY(-5px);
+      }
+    }
+  }
+  .copyright-paragraph {
+    width: 100%;
+    color: gray;
+    font-size: 20px;
+    i {
+      font-size: 10px;
+      margin-right: 1%;
+    }
+  }
+  .footer-logo {
+    opacity: 0;
+    img {
+      max-width: 80%;
+    }
+  }
+  .animation {
+    animation: opacity 2s forwards;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color: darkgray, $alpha: 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba($color: darkgray, $alpha: 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($color: darkgray, $alpha: 1);
+  }
+}
+@keyframes visibility {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

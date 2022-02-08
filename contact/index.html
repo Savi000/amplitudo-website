@@ -1,0 +1,124 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../styles/css/fontawesome.css" rel="stylesheet" />
+    <link href="../styles/css/brands.css" rel="stylesheet" />
+    <link href="../styles/css/solid.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comforter&family=Dongle:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/contact.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+  </head>
+  <body>
+    <div class="contact-images">
+      <!-- data-page="contact -->
+      <nav class="contact-nav">
+        <div onclick="toggleClass(event)" class="hamburger" id="hamburger-1">
+          <span style="pointer-events: none" class="line"></span>
+          <span style="pointer-events: none" class="line"></span>
+          <span style="pointer-events: none" class="line"></span>
+        </div>
+        <!-- src=${nav.dataset.page ? "../assets/logoTransparent.svg" : "../assets/logo.png"}  img src-->
+
+        <img
+          class="contact-nav__image"
+          alt="logo"
+          width="30"
+          height="30"
+          src="../assets/logoTransparent.svg"
+        />
+        <!-- PRAVI NAVIGACIJU OVAKO SA OVIM DIVOM SVUDA KOPIRAJ JER NA UL NECE NESTO STYLE TO POSLE GUGLAJ ALI SA DIVOM RADI I WIDTH I SVE MOZE NORMALNO CSS DA PISES PA SAD PROMJENI ILI PRILAGODI SVE OVOM DIVU -->
+        <!-- kad koristis samo listu bez div-a bude veci width liste i izlazi izvan okvira a div tacno koliko je body kao da lista bude pomjerena udesno i ne krece od pocetka -->
+        <div class="contact-nav__links">
+          <!-- <ul class="nav__list"> -->
+          <ul>
+            <li><a>Home</a></li>
+            <li>
+              <a class="services-nav-link" href="../services/">Services</a>
+
+              <!-- bilo dropdown-nav -->
+              <div class="dropdown-services">
+                <div class="dropdown-services__content">
+                  <a href="../services/softwaredev.html"
+                    >Software Development</a
+                  >
+                  <a href="../services/marketing.html">Marketing</a>
+                </div>
+              </div>
+            </li>
+            <li><a>StartUp</a></li>
+            <li><a>Career</a></li>
+            <li><a>Company</a></li>
+            <li><a href="../blog/">Blog</a></li>
+            <div class="dropdown">
+              <button class="current-btn" onclick="changeLanguage(event)">
+                cg
+              </button>
+              <div class="dropdown__content">
+                <button onclick="changeLanguage(event)">en</button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </nav>
+      <!-- kraj navigacije -->
+      <img class="contact-images__triangle" src="../assets/Group 1096.png" />
+      <img class="contact-images__cube" src="../assets/Group 1074.png" />
+      <h1 class="contact-header">We love to talk</h1>
+      <p>just say hello :D</p>
+      <img class="contact-images__donut" src="../assets/Group 1073.png" />
+    </div>
+    <div class="contact">
+      <div class="contact__map"></div>
+      <div class="contact__small">
+        <h1>Meet us</h1>
+        <div class="info">
+          <p>+382 0000000</p>
+          <p>info@amplitudo.me</p>
+          <p>Bulevar Svetog Petra Cetinjskog</p>
+          <p>56 Podgorica, Crna Gora</p>
+        </div>
+        <div class="icons">
+          <a target="_blank" href="https://www.facebook.com/"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a target="_blank" href="https://www.instagram.com/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a target="_blank" href="https://www.linkedin.com/"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a target="_blank" href="https://twitter.com/"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a target="_blank" href="https://www.behance.net/"
+            ><i class="fab fa-behance-square"></i
+          ></a>
+        </div>
+      </div>
+      <div class="contact__form-div">
+        <h1>Contact us</h1>
+        <form>
+          <input id="name" placeholder="Full name" />
+          <input type="email" id="email" placeholder="Email" />
+          <textarea placeholder="Message"></textarea>
+          <div class="btn-div">
+            <button><i class="fas fa-arrow-right"></i></button>
+            <h2>send</h2>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="../html.js"></script>
+    <script src="../app.js"></script>
+  </body>
+</html>
